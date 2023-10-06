@@ -1,0 +1,27 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 10-06-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+
+  <div class="slds-m-vertical_medium">
+    <h1 class="slds-text-heading_small">Slide to change opportunity amount</h1>
+    <lightning-slider label="Amount Limit" max ="100000" min = "1000" step="100" value={amount} onchange={handleChange}></lightning-slider>
+
+</div>
+<lightning-card>
+  <ul>
+         
+          <template for:each={opportunities.data} for:item="opportunity">
+                
+                 <li key={opportunity.Id}><h3>{label.OpportunityName}</h3><a href='#'>{opportunity.Name}</a></li>
+              <li key={opportunity.Id}><h3>{label.OpportunityAmount}</h3>{opportunity.Amount}</li>
+             
+          </template>
+         
+         </ul>
+</lightning-card>
+</template>
